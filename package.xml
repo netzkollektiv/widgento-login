@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>SpadarLogin</name>
+    <version>1.0.7</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Login as Customer</summary>
+    <description>Allows admin users login as customers from admin</description>
+    <notes>* Multistore fix</notes>
+    <authors><author><name>Yury Ksenevich</name><user>widgento</user><email>info@widgento.com</email></author><author><name>Yury Ksenevich</name><user>spadar</user><email>yury@spadar.com</email></author></authors>
+    <date>2014-01-16</date>
+    <time>09:42:32</time>
+    <contents><target name="magecommunity"><dir name="Widgento"><dir name="Core"><dir name="Helper"><file name="Data.php" hash="5c084decef30167ea2ee8189c932c76f"/></dir><dir name="Model"><file name="Feed.php" hash="f63257c2228b0a7572d7645119953461"/><dir name="Uninstall"><file name="Abstract.php" hash="c6ce1d4b678139ceaf38e4af2e72808b"/></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="RewriteController.php" hash="fd8d03e00ae21de335f00f89ff6f2805"/></dir></dir><dir name="etc"><file name="config.xml" hash="70c93fe26710248226553762f594252c"/><file name="manifest.xml" hash="f6503a305a469b7bd652d47bef866836"/></dir></dir><dir name="Login"><dir name="Helper"><file name="Button.php" hash="8d0267cc9ead51eeca5bbc618ffeaab6"/><file name="Data.php" hash="def351b327391da4de9c5056ded0c07f"/></dir><dir name="Model"><file name="Login.php" hash="5d948863c202ba6032f02a2892ceeb54"/><dir name="Mysql4"><file name="Login.php" hash="dfb677ca53588b42eaf58034f9f11076"/></dir><file name="Uninstall.php" hash="533385dcf8daaf8b864fe2bd532210b1"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="IndexController.php" hash="502d89d14312d9c52a539150af2ca86a"/></dir><file name="IndexController.php" hash="0fb67122336102c4136f16f33a5237b7"/></dir><dir name="etc"><file name="config.xml" hash="de5f4fe678acdb5faf68cdfb26bafdd1"/><file name="manifest.xml" hash="d959418a3e7c4f84f38c0a9242655d84"/><file name="system.xml" hash="4edbd5d9126a91cabd1d88d4829d1570"/></dir><dir name="sql"><dir name="widgentologin_setup"><file name="mysql4-install-0.1.0.php" hash="d514cbdf9752b64e0a9193e952098bbd"/><file name="mysql4-install-1.0.1.php" hash="2df40ce249cac6cacbc1e63b4870d621"/><file name="mysql4-upgrade-1.0.1.php" hash="d9b5afec91ab3df10e1dfea08c5e4266"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Widgento_Core.xml" hash="f4a4f876441a427fc51443b0486e178a"/><file name="Widgento_Login.xml" hash="1d8c6c1930f933d37682ebbd4b638d7b"/><file name="Spadar_Login.xml" hash="411aae5de4494f05496a035061170f00"/></dir></target><target name="mage"><dir name="shell"><file name="widgento_uninstall.php" hash="503b3c6f5c3941eff0615c1aa97f3215"/></dir></target><target name="magelocale"><dir><dir name="de_DE"><file name="Widgento_Login.csv" hash="0b9020a898e0ae4c95b3a61a8a193156"/></dir><dir name="en_US"><file name="Widgento_Login.csv" hash="68458781e96bf72778efce90103748e9"/></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="widgentologin.xml" hash="b940ba56d20675783bf0b05bb93e0e95"/></dir></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.1.0</min><max>7.0.0</max></php><package><name>Mage_Core_Modules</name><channel>community</channel><min>1.4</min><max/></package></required></dependencies>
+</package>

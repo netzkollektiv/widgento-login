@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+/**
+ * Widgento_Login
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0), a
+ * copy of which is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Widgento
+ * @package    Widgento_Login
+ * @author     Yury Ksenevich <info@widgento.com>
+ * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+
+
+-->
+
+<config>
+    <modules>
+        <Widgento_Login>
+            <version>1.0.7</version>
+        </Widgento_Login>
+    </modules>
+
+    <global>
+        <models>
+            <widgentologin>
+                <class>Widgento_Login_Model</class>
+                <resourceModel>widgentologin_mysql4</resourceModel>
+            </widgentologin>
+            <widgentologin_mysql4>
+                <class>Widgento_Login_Model_Mysql4</class>
+                <entities>
+                    <login>
+                        <table>widgento_login</table>
+                    </login>
+                    <login_deprecated>
+                        <table>spadar_login</table>
+                    </login_deprecated>
+                </entities>
+            </widgentologin_mysql4>
+        </models>
+        <blocks>
+            <widgentologin>
+                <class>Widgento_Login_Block</class>
+            </widgentologin>
+        </blocks>
+
+        <helpers>
+            <widgentologin><class>Widgento_Login_Helper</class></widgentologin>
+        </helpers>
+
+		<resources>
+			<widgentologin_setup>
+				<setup>
+ 				   <module>Widgento_Login</module>
+				</setup>
+				<connection>
+				    <use>core_setup</use>
+				</connection>
+			</widgentologin_setup>
+			<widgentologin_write>
+				<connection>
+				    <use>core_write</use>
+				</connection>
+			</widgentologin_write>
+			<widgentologin_read>
+				<connection>
+				    <use>core_read</use>
+				</connection>
+			</widgentologin_read>
+		</resources>
+        <events>
+            <widgento_core_uninstall>
+                <observers>
+                    <widgentologin>
+                        <class>widgentologin/uninstall</class>
+                        <method>uninstall</method>
+                    </widgentologin>
+                </observers>
+            </widgento_core_uninstall>
+        </events>
+    </global>
+
+    <admin>
+        <routers>
+          <widgentologinadmin>
+              <use>admin</use>
+              <args>
+                  <module>Widgento_Login_Adminhtml</module>
+                  <frontName>widgentologinadmin</frontName>
+              </args>
+          </widgentologinadmin>
+       </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+             <updates>
+                  <widgentologin>
+                        <file>widgentologin.xml</file>
+                  </widgentologin>
+             </updates>
+        </layout>
+
+        <translate>
+            <modules>
+                <Widgento_Login>
+                    <files>
+                        <default>Widgento_Login.csv</default>
+                    </files>
+                </Widgento_Login>
+            </modules>
+        </translate>
+
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <customer>
+                            <children>
+                                <login>
+                                    <title>Login as Customer</title>
+                                </login>
+                            </children>
+                        </customer>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+
+    <frontend>
+        <routers>
+          <widgentologin>
+              <use>standard</use>
+              <args>
+                  <module>Widgento_Login</module>
+                  <frontName>widgentologin</frontName>
+              </args>
+          </widgentologin>
+       </routers>
+    </frontend>
+
+    <default>
+        <customer>
+            <login>
+                <order_view_display>1</order_view_display>
+            </login>
+        </customer>
+    </default>
+</config>

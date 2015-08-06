@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+
+/**
+ * Widgento_Login
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0), a
+ * copy of which is available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ *
+ * @category   Widgento
+ * @package    Widgento_Login
+ * @author     Yury Ksenevich <info@widgento.com>
+ * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
+ * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+
+
+-->
+
+<manifest>
+    <Widgento_Login>
+        <paths>
+            <path>app/code/community/Widgento/Login/</path>
+            <path>app/etc/modules/Widgento_Login.xml</path>
+            <path>app/etc/modules/Spadar_Login.xml</path>
+            <path>app/locale/en_US/Widgento_Login.csv</path>
+            <path>app/locale/de_DE/Widgento_Login.csv</path>
+            <path>app/design/adminhtml/default/default/layout/widgentologin.xml</path>
+        </paths>
+    </Widgento_Login>
+</manifest>

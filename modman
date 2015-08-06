@@ -1,0 +1,5 @@
+app/code/community/Widgento/Login app/code/community/Widgento/Login
+app/design/adminhtml/default/default/layout/widgentologin.xml app/design/adminhtml/default/default/layout/widgentologin.xml
+app/etc/modules/Widgento_Login.xml app/etc/modules/Widgento_Login.xml
+app/locale/de_DE/Widgento_Login.csv app/locale/de_DE/Widgento_Login.csv
+app/locale/en_US/Widgento_Login.csv app/locale/en_US/Widgento_Login.csv
