@@ -1,1 +1,1 @@
-see http://www.magentocommerce.com/magento-connect/disable-compare-products.html
+see http://www.magentocommerce.com/magento-connect/login-as-customer.html
