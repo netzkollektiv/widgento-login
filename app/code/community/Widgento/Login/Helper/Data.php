@@ -12,7 +12,7 @@
  * @category   Widgento
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
- * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
+ * @copyright  Copyright (c) 2012-2015 Yury Ksenevich p.e.
  * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
@@ -67,5 +67,17 @@ class Widgento_Login_Helper_Data extends Mage_Core_Helper_Abstract
     public function isOrderViewDisplayButton()
     {
         return Mage::getStoreConfig('widgentologin/general/order_view_display');
+    }
+
+    public function isLoginAllowed($customerId) {
+        /* @var $adminSession Mage_Admin_Model_Session */
+        $adminSession = Mage::getSingleton('admin/session');
+        $transport    = new Varien_Object(array('disable' => false));
+        Mage::dispatchEvent('widgentologin_disable', array(
+            'transport'   => $transport,
+            'customer_id' => $customerId,
+        ));
+
+        return ($adminSession->isAllowed('customer/widgentologin') || $transport->getDisable());
     }
 }

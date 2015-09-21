@@ -12,7 +12,7 @@
  * @category   Widgento
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
- * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
+ * @copyright  Copyright (c) 2012-2015 Yury Ksenevich p.e.
  * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
@@ -23,24 +23,16 @@ class Widgento_Login_Adminhtml_IndexController extends Mage_Adminhtml_Controller
 {
     public function indexAction()
     {
-        /* @var $adminSession Mage_Admin_Model_Session */
-        $adminSession = Mage::getSingleton('admin/session');
-        $customerId   = $this->getRequest()->getParam('id');
-        $customer     = Mage::getModel('customer/customer')->load($customerId);
+        $customerId = $this->getRequest()->getParam('id');
+        $customer   = Mage::getModel('customer/customer')->load($customerId);
 
-        $transport = new Varien_Object(array('disable' => false));
-        Mage::dispatchEvent('widgentologin_disable', array(
-            'transport'   => $transport,
-            'customer_id' => $customerId,
-        ));
-
-        if (!$adminSession->isAllowed('system/config/widgentologin') || !$customer->getId() || $transport->getDisable())
+        if (!Mage::helper('widgentologin')->isLoginAllowed($customerId) || !$customer->getId())
         {
             return $this->_redirect('admin/');
         }
 
-        $hash  = md5(uniqid(mt_rand(), true));
-        $login = Mage::getModel('widgentologin/login')
+        $hash = md5(uniqid(mt_rand(), true));
+        Mage::getModel('widgentologin/login')
             ->setLoginHash($hash)
             ->setCustomerId($customerId)
             ->setAdminId(Mage::getSingleton('admin/session')->getUser()->getId())

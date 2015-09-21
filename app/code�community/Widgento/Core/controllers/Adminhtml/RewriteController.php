@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 
+<?php
 
 /**
  * Widgento_Login
@@ -18,18 +17,14 @@
  */
 
 
--->
+?><?php
 
-<config>
-    <modules>
-        <Widgento_Core>
-            <active>true</active>
-            <codePool>community</codePool>
-            <self_name>Widgento Core</self_name>
-            <priority>1001</priority>
-            <depends>
-                
-            </depends>
-        </Widgento_Core>
-    </modules>
-</config>
+class Widgento_Core_Adminhtml_RewriteController extends Mage_Adminhtml_Controller_Action
+{
+    public function indexAction()
+    {
+        $this
+            ->loadLayout()
+            ->renderLayout();
+    }
+}
