@@ -13,7 +13,7 @@
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
  * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
 
@@ -28,7 +28,13 @@ class Widgento_Login_Adminhtml_IndexController extends Mage_Adminhtml_Controller
         $customerId   = $this->getRequest()->getParam('id');
         $customer     = Mage::getModel('customer/customer')->load($customerId);
 
-        if (!$adminSession->isAllowed('customer/login') || !$customer->getId()) 
+        $transport = new Varien_Object(array('disable' => false));
+        Mage::dispatchEvent('widgentologin_disable', array(
+            'transport'   => $transport,
+            'customer_id' => $customerId,
+        ));
+
+        if (!$adminSession->isAllowed('system/config/widgentologin') || !$customer->getId() || $transport->getDisable())
         {
             return $this->_redirect('admin/');
         }
@@ -37,6 +43,9 @@ class Widgento_Login_Adminhtml_IndexController extends Mage_Adminhtml_Controller
         $login = Mage::getModel('widgentologin/login')
             ->setLoginHash($hash)
             ->setCustomerId($customerId)
+            ->setAdminId(Mage::getSingleton('admin/session')->getUser()->getId())
+            ->setCreatedAt(now())
+            ->setIsActive(1)
             ->save();
 
         return $this->_redirect('widgentologin/', array(

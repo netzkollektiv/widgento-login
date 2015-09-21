@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Widgento_Core
+ * Widgento_Login
  *
  * NOTICE OF LICENSE
  *
@@ -10,10 +10,10 @@
  * http://opensource.org/licenses/osl-3.0.php
  *
  * @category   Widgento
- * @package    Widgento_Core
+ * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
  * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
 

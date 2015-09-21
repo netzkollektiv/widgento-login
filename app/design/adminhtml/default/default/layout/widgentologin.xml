@@ -14,7 +14,7 @@
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
  * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
 
@@ -29,7 +29,18 @@
 
     <adminhtml_sales_order_view>
         <reference name="sales_order_edit">
-            <action method="addButton"><id>login</id><data helper="widgentologin/button/getButtonData" /><level>-1</level><sort>0</sort><area helper="widgentologin/button/getButtonArea" /></action>
+            <action method="addButton" ifconfig="widgentologin/general/order_view_display"><id>login</id><data helper="widgentologin/button/getButtonData" /><level>-1</level><sort>0</sort><area helper="widgentologin/button/getButtonArea" /></action>
         </reference>
     </adminhtml_sales_order_view>
+
+    <widgentologinadmin_log_index>
+        <reference name="content">
+            <block type="widgentologin/adminhtml_log" name="widgentologin.log"></block>
+        </reference>
+    </widgentologinadmin_log_index>
+
+    <widgentologinadmin_log_grid>
+        <update handle="formkey"/>
+        <block type="widgentologin/adminhtml_log_grid" name="widgentologin.log.grid" output="toHtml"></block>
+    </widgentologinadmin_log_grid>
 </layout>

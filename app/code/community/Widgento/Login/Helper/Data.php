@@ -13,7 +13,7 @@
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
  * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
 
@@ -57,5 +57,15 @@ class Widgento_Login_Helper_Data extends Mage_Core_Helper_Abstract
         {
             return Mage::app()->getDefaultStoreView()->getId();
         }
+    }
+
+    public function isSaveLogs()
+    {
+        return Mage::getStoreConfig('widgentologin/general/save_logs');
+    }
+
+    public function isOrderViewDisplayButton()
+    {
+        return Mage::getStoreConfig('widgentologin/general/order_view_display');
     }
 }

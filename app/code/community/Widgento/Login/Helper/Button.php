@@ -13,7 +13,7 @@
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
  * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
 
@@ -55,7 +55,13 @@ class Widgento_Login_Helper_Button extends Mage_Core_Helper_Abstract
         /* @var $adminSession Mage_Admin_Model_Session */
         $adminSession = Mage::getSingleton('admin/session');
 
-        if (!$adminSession->isAllowed('customer/login') || !Mage::helper('widgentologin')->getCustomerStoreId($this->_getCustomerId()))
+        $transport = new Varien_Object(array('disable' => false));
+        Mage::dispatchEvent('widgentologin_disable', array(
+            'transport'   => $transport,
+            'customer_id' => $this->_getCustomerId(),
+            ));
+
+        if (!$adminSession->isAllowed('system/config/widgentologin') || !Mage::helper('widgentologin')->getCustomerStoreId($this->_getCustomerId()) || $transport->getDisable())
         {
             return 'hidden';
         }

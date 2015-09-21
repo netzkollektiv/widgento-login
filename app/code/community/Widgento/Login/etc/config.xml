@@ -14,7 +14,7 @@
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
  * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
- * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ * @license    http://www.widgento.com/customer-service Widgento Modules License
  */
 
 
@@ -23,7 +23,7 @@
 <config>
     <modules>
         <Widgento_Login>
-            <version>1.0.7</version>
+            <version>1.1.0</version>
         </Widgento_Login>
     </modules>
 
@@ -56,14 +56,14 @@
         </helpers>
 
 		<resources>
-			<widgentologin_setup>
+			<widgento_login_setup>
 				<setup>
  				   <module>Widgento_Login</module>
 				</setup>
 				<connection>
 				    <use>core_setup</use>
 				</connection>
-			</widgentologin_setup>
+			</widgento_login_setup>
 			<widgentologin_write>
 				<connection>
 				    <use>core_write</use>
@@ -122,17 +122,33 @@
             <resources>
                 <admin>
                     <children>
-                        <customer>
+                        <system>
                             <children>
-                                <login>
-                                    <title>Login as Customer</title>
-                                </login>
+                                <config>
+                                    <children>
+                                        <widgentologin>
+                                            <title>Login as Customer</title>
+                                        </widgentologin>
+                                    </children>
+                                </config>
                             </children>
-                        </customer>
+                        </system>
                     </children>
                 </admin>
             </resources>
         </acl>
+
+        <menu>
+            <customer>
+                <children>
+                    <widgentologin translate="title" module="widgentologin">
+                        <title>Login as Customer Logs</title>
+                        <action>widgentologinadmin/log/index</action>
+                        <sort_order>200</sort_order>
+                    </widgentologin>
+                </children>
+            </customer>
+        </menu>
     </adminhtml>
 
     <frontend>
@@ -148,10 +164,11 @@
     </frontend>
 
     <default>
-        <customer>
-            <login>
+        <widgentologin>
+            <general>
                 <order_view_display>1</order_view_display>
-            </login>
-        </customer>
+                <save_logs>1</save_logs>
+            </general>
+        </widgentologin>
     </default>
 </config>
