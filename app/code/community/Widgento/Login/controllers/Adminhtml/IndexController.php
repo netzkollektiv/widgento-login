@@ -45,4 +45,9 @@ class Widgento_Login_Adminhtml_IndexController extends Mage_Adminhtml_Controller
         	'_store' => Mage::helper('widgentologin')->getCustomerStoreId($customer->getId()), 
             ));
     }
+
+    public function _isAllowed()
+    {
+        return Mage::getSingleton('admin/session')->isAllowed('customer/widgentologin');
+    }
 }
