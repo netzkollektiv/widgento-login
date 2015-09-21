@@ -49,7 +49,6 @@
             <self_name></self_name>
             <priority>1001</priority>
             <depends>
-                <Widgento_Core />
                 <Mage_Customer />
                 <Mage_Adminhtml />
             </depends>
