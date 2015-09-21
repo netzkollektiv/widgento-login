@@ -27,4 +27,26 @@
             <sort_order>199</sort_order>
         </widgento>
     </tabs>
+    <sections>
+        <widgentocore translate="label" module="widgentocore">
+            <label>Modules Info</label>
+            <tab>widgento</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>110</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <extensions translate="label">
+                    <label>Installed Extensions</label>
+                    <frontend_type>text</frontend_type>
+                    <frontend_model>widgentocore/system_extensions</frontend_model>
+                    <sort_order>40</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                </extensions>
+            </groups>
+        </widgentocore>
+    </sections>
 </config>

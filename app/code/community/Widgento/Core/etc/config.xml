@@ -23,7 +23,7 @@
 <config>
     <modules>
         <Widgento_Core>
-            <version>0.1.0</version>
+            <version>0.2.0</version>
         </Widgento_Core>
     </modules>
 
@@ -91,7 +91,25 @@
 	            </observers>
 		    </controller_action_predispatch>
 		</events>
-
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <widgentocore>
+                                            <title>Widgento Modules Info</title>
+                                        </widgentocore>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
     </adminhtml>
 
     <frontend>

@@ -61,7 +61,7 @@ class Widgento_Login_Helper_Button extends Mage_Core_Helper_Abstract
             'customer_id' => $this->_getCustomerId(),
             ));
 
-        if (!$adminSession->isAllowed('system/config/widgentologin') || !Mage::helper('widgentologin')->getCustomerStoreId($this->_getCustomerId()) || $transport->getDisable())
+        if (!$adminSession->isAllowed('customer/widgentologin') || !Mage::helper('widgentologin')->getCustomerStoreId($this->_getCustomerId()) || $transport->getDisable())
         {
             return 'hidden';
         }

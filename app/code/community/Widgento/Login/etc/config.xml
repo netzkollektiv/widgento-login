@@ -23,7 +23,7 @@
 <config>
     <modules>
         <Widgento_Login>
-            <version>1.1.0</version>
+            <version>1.1.1</version>
         </Widgento_Login>
     </modules>
 
@@ -133,6 +133,18 @@
                                 </config>
                             </children>
                         </system>
+                        <customer>
+                            <children>
+                                <widgentologin>
+                                    <title>Login as Customer</title>
+                                    <children>
+                                        <log>
+                                            <title>Login as Customer Logs</title>
+                                        </log>
+                                    </children>
+                                </widgentologin>
+                            </children>
+                        </customer>
                     </children>
                 </admin>
             </resources>

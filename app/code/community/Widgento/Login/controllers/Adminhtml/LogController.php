@@ -39,7 +39,7 @@ class Widgento_Login_Adminhtml_LogController extends Mage_Adminhtml_Controller_A
 
     public function _isAllowed()
     {
-        return Mage::getSingleton('admin/session')->isAllowed('system/config/widgentologin');
+        return Mage::getSingleton('admin/session')->isAllowed('customer/widgentologin/log');
     }
 
     public function gridAction()
