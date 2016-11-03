@@ -1,0 +1,14 @@
+{
+    "name": "widgento/loginascustomer",
+    "type": "magento-module",
+    "description": "Login as Customer",
+    "authors": [
+        {
+            "name": "Widgento",
+            "email": "info@widgento.com",
+            "homepage": "http://www.widgento.com/"
+        }
+    ], "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}
