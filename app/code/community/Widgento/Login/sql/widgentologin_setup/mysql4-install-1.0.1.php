@@ -12,7 +12,7 @@
  * @category   Widgento
  * @package    Widgento_Login
  * @author     Yury Ksenevich <info@widgento.com>
- * @copyright  Copyright (c) 2012-2014 Yury Ksenevich p.e.
+ * @copyright  Copyright (c) 2012-2017 Yury Ksenevich p.e.
  * @license    http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  */
 
